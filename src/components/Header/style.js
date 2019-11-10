@@ -9,7 +9,9 @@ export const HeaderWrapper = styled.div`
   padding: 0;
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.a.attrs({
+  href: "/"
+})`
   position: absolute;
   height: 58px;
   border-bottom: 1px solid #f0f0f0;
@@ -22,39 +24,67 @@ export const Logo = styled.a`
   background-size: contain;
 `;
 
-export const Button = styled.button`
-  font-weight: 400;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 6px 12px;
-  float: right;
-  height: 40px;
-  border:1px solid transparent;
-  &.write-btn {
-    width: 100px;
-    height: 40px;
-    line-height: 24px;
-    margin: 8px 12px 0;
-    border-radius: 20px;
-    font-size: 15px;
-    color: #fff;
-    background-color: #ea6f5a;
+export const Nav = styled.div`
+  margin: 0 auto;
+  height: 100%;
+  width: 960px;
+  box-sizing: content-box;
+`;
+
+export const NavItem = styled.div`
+  line-height: 58px;
+  padding: 0 15px;
+  &.left {
+    float: left;
   }
-  &.sign-up {
-    width: 80px;
-    height: 38px;
-    line-height: 24px;
-    margin: 9px 5px 0 15px;
-    border: 1px solid rgba(236,97,73,.7);
-    border-radius: 20px;
-    font-size: 15px;
+  &.right {
+    float: right;
+  }
+  &.active {
     color: #ea6f5a;
-    background-color: transparent;
   }
-  &.log-in {
-    margin: 11px 6px 0 10px;
-    font-size: 15px;
+`;
+
+export const NavSearch = styled.input.attrs({
+  placeholder: "搜索"
+})`
+  width: 240px;
+  height: 38px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 19px;
+  background: #eee;
+  margin-top: 9px;
+  margin-left: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  &::placeholder {
+    color: #999;
+  }
+`;
+
+export const Addition = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 58px;
+`;
+
+export const Button = styled.button`
+  float: right;
+  margin-top: 9px;
+  margin-right:20px;
+  padding:0 20px;
+  line-height:38px;
+  border-radius: 19px;
+  border: 1px solid #ec6149;
+  &.reg {
+    color:red;
+  }
+  &.writer {
+    color:white;
+    background-color: #ec6149;
   }
 `;

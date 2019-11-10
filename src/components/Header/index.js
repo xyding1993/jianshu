@@ -1,14 +1,30 @@
 import React, { Component } from "react";
-import { HeaderWrapper, Logo, Button } from "./style";
+import {
+  HeaderWrapper,
+  Logo,
+  Nav,
+  NavItem,
+  NavSearch,
+  Addition,
+  Button
+} from "./style";
 
 class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
         <Logo />
-        <Button className="write-btn">写文章</Button>
-        <Button className="sign-up">注册</Button>
-        <Button className="log-in">登录</Button>
+        <Nav>
+          <NavItem className="left active">首页</NavItem>
+          <NavItem className="left">下载</NavItem>
+          <NavSearch className="left"></NavSearch>
+          <NavItem className="right">BB</NavItem>
+          <NavItem className="right">登录</NavItem>
+        </Nav>
+        <Addition>
+          <Button className="writer">写文章</Button>
+          <Button className="reg">注册</Button>
+        </Addition>
       </HeaderWrapper>
     );
   }
