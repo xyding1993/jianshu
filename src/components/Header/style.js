@@ -146,11 +146,11 @@ export const SearchInfoSwitch = styled("div")({
   fontSize: "13px"
 });
 
-export const SearchInfoList = styled.a`
+export const SearchInfoList = styled.div`
   overflow: hidden;
 `;
 
-export const SearchInfoItem = styled.a`
+export const SearchInfoItem = styled.div`
   display: block;
   float: left;
   line-break: 20px;
