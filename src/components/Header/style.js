@@ -39,6 +39,7 @@ export const NavItem = styled.div`
   }
   &.right {
     float: right;
+    color: #969696;
   }
   &.active {
     color: #ea6f5a;
@@ -48,8 +49,9 @@ export const NavItem = styled.div`
 export const NavSearch = styled.input.attrs({
   placeholder: "搜索"
 })`
-  width: 240px;
+  width: 160px;
   height: 38px;
+  padding: 0 35px 0 20px;
   font-size: 14px;
   border: none;
   outline: none;
@@ -58,10 +60,13 @@ export const NavSearch = styled.input.attrs({
   background: #eee;
   margin-top: 9px;
   margin-left: 20px;
-  padding: 0 20px;
   box-sizing: border-box;
+  color:#777;
   &::placeholder {
     color: #999;
+  }
+  &.focused {
+    width:240px
   }
 `;
 
@@ -75,16 +80,73 @@ export const Addition = styled.div`
 export const Button = styled.button`
   float: right;
   margin-top: 9px;
-  margin-right:20px;
-  padding:0 20px;
-  line-height:38px;
+  margin-right: 20px;
+  padding: 0 20px;
+  line-height: 38px;
   border-radius: 19px;
   border: 1px solid #ec6149;
   &.reg {
-    color:red;
+    color: red;
   }
   &.writer {
-    color:white;
+    color: white;
     background-color: #ec6149;
   }
+`;
+
+export const SearchWrapper = styled.div`
+  position: relative;
+  float: left;
+  .iconfont {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    &.focused {
+      background:#777;
+      color:#fff;
+    }
+  }
+`;
+
+export const SearchInfo = styled("div")({
+  position: "absolute",
+  left: "20px",
+  top: "56px",
+  width: "240px",
+  padding: "0 20px",
+  boxShadow: "0 0 8px rgba(0, 0, 0, .2)"
+});
+
+export const SearchInfoTitle = styled("div")({
+  marginTop: "20px",
+  marginBottom: "15px",
+  lineHeight: "20px",
+  fontSize: "14px",
+  color: "#333"
+});
+
+export const SearchInfoSwitch = styled("div")({
+  float: "right",
+  fontSize: "13px"
+});
+
+export const SearchInfoList = styled.a`
+  overflow: hidden;
+`;
+
+export const SearchInfoItem = styled.a`
+  display: block;
+  float: left;
+  line-break: 20px;
+  padding: 0 10px;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  color: #969696;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-bottom: 15px;
 `;

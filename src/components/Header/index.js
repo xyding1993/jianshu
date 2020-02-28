@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   HeaderWrapper,
   Logo,
@@ -6,18 +6,74 @@ import {
   NavItem,
   NavSearch,
   Addition,
-  Button
+  Button,
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem,
+  SearchInfoList
 } from "./style";
 
-class Header extends Component {
+const getListArea = show => {
+  return (
+    <SearchInfo>
+      <SearchInfoTitle>
+        热门搜索
+        <SearchInfoSwitch>换一换</SearchInfoSwitch>
+      </SearchInfoTitle>
+      <SearchInfoList>
+        <SearchInfoItem>教育</SearchInfoItem>
+        <SearchInfoItem>教育</SearchInfoItem>
+        <SearchInfoItem>教育</SearchInfoItem>
+        <SearchInfoItem>教育</SearchInfoItem>
+        <SearchInfoItem>教育</SearchInfoItem>
+      </SearchInfoList>
+    </SearchInfo>
+  );
+};
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      focused: false
+    };
+    this.handlerInputFocus = this.handlerInputFocus.bind(this);
+    this.handlerInputBlur = this.handlerInputBlur.bind(this);
+  }
+
+  handlerInputFocus = () => {
+    this.setState({
+      focused: true
+    });
+  };
+
+  handlerInputBlur = () => {
+    this.setState({
+      focused: false
+    });
+  };
+
   render() {
+    const { focused } = this.state;
     return (
       <HeaderWrapper>
         <Logo />
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载</NavItem>
-          <NavSearch className="left"></NavSearch>
+          <SearchWrapper>
+            <NavSearch
+              className={focused ? "focused" : ""}
+              onFocus={this.handlerInputFocus}
+              onBlur={this.handlerInputBlur}
+            ></NavSearch>
+            <i className={focused ? "focused iconfont" : "iconfont"}>
+              &#xe64d;
+            </i>
+            {getListArea(focused)}
+          </SearchWrapper>
           <NavItem className="right">登录</NavItem>
           <NavItem className="right">Aa</NavItem>
         </Nav>
