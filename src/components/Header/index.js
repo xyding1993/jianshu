@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
-import {actionCreators} from "./store";
+import { actionCreators } from "./store";
 import {
   HeaderWrapper,
   Logo,
@@ -69,7 +69,7 @@ const Header = props => {
 
 const mapStateToProps = ({ header }) => {
   return {
-    focused: header.focused
+    focused: header.get('focused')
   };
 };
 
