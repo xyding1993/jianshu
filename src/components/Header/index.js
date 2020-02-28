@@ -22,21 +22,24 @@ const Header = props => {
   const { focused, handlerInputFocus, handlerInputBlur } = props;
 
   const getListArea = show => {
-    return (
-      <SearchInfo>
-        <SearchInfoTitle>
-          热门搜索
-          <SearchInfoSwitch>换一换</SearchInfoSwitch>
-        </SearchInfoTitle>
-        <SearchInfoList>
-          <SearchInfoItem>教育</SearchInfoItem>
-          <SearchInfoItem>教育</SearchInfoItem>
-          <SearchInfoItem>教育</SearchInfoItem>
-          <SearchInfoItem>教育</SearchInfoItem>
-          <SearchInfoItem>教育</SearchInfoItem>
-        </SearchInfoList>
-      </SearchInfo>
-    );
+    if(show) {
+      return (
+        <SearchInfo>
+          <SearchInfoTitle>
+            热门搜索
+            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+          </SearchInfoList>
+        </SearchInfo>
+      );
+    }
+    return null;
   };
 
   return (

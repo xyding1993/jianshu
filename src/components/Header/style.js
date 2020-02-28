@@ -150,15 +150,15 @@ export const SearchInfoList = styled.div`
   overflow: hidden;
 `;
 
-export const SearchInfoItem = styled.div`
+export const SearchInfoItem = styled.a`
   display: block;
   float: left;
-  line-break: 20px;
-  padding: 0 10px;
+  line-height: 20px;
+  padding: 2px 6px;
   font-size: 13px;
   border: 1px solid #ddd;
-  color: #969696;
-  border-radius: 2px;
+  color: #787878;
+  border-radius: 3px;
   margin-left: 5px;
   margin-bottom: 15px;
 `;
