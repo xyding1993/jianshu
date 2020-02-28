@@ -76,10 +76,10 @@ const mapStateToProps = ({ header }) => {
 const mapDispatchToProps = dispatch => {
   return {
     handlerInputFocus() {
-      dispatch(actionCreators.searchFocus);
+      dispatch(actionCreators.searchFocus());
     },
     handlerInputBlur() {
-      dispatch(actionCreators.searchBlur);
+      dispatch(actionCreators.searchBlur());
     }
   };
 };
