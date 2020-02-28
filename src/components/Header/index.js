@@ -67,9 +67,9 @@ const Header = props => {
   );
 };
 
-const mapStateToProps = ({ header }) => {
+const mapStateToProps = (state) => {
   return {
-    focused: header.get('focused')
+    focused: state.getIn(['header', 'focused'])
   };
 };
 
