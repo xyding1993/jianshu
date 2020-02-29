@@ -21,7 +21,7 @@ import {
 class Header extends React.Component {
   render() {
     // command+d
-    const { focused, handlerInputFocus, handlerInputBlur } = this.props;
+    const { focused, list, handlerInputFocus, handlerInputBlur } = this.props;
 
     const getListArea = show => {
       if (show) {
@@ -32,11 +32,9 @@ class Header extends React.Component {
               <SearchInfoSwitch>换一批</SearchInfoSwitch>
             </SearchInfoTitle>
             <SearchInfoList>
-              <SearchInfoItem>教育</SearchInfoItem>
-              <SearchInfoItem>教育</SearchInfoItem>
-              <SearchInfoItem>教育</SearchInfoItem>
-              <SearchInfoItem>教育</SearchInfoItem>
-              <SearchInfoItem>教育</SearchInfoItem>
+              {list.map(item => {
+                return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
+              })}
             </SearchInfoList>
           </SearchInfo>
         );
@@ -77,14 +75,15 @@ class Header extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    focused: state.getIn(["header", "focused"])
+    focused: state.getIn(["header", "focused"]),
+    list: state.getIn(["header", "list"])
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     handlerInputFocus() {
-      dispatch(actionCreators.getList())
+      dispatch(actionCreators.getList());
       dispatch(actionCreators.searchFocus());
     },
     handlerInputBlur() {
