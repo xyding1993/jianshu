@@ -4,7 +4,8 @@ import * as constants from "./constans";
 
 const defaultState = fromJS({
   topicList: [],
-  articleList: []
+  articleList: [],
+  showScroll: false
 });
 
 export default (state = defaultState, action) => {
@@ -19,6 +20,8 @@ export default (state = defaultState, action) => {
         "articleList",
         state.get("articleList").concat(action.articleList)
       );
+    case constants.CHANGE_SCROLL:
+      return state.set("showScroll", action.data);
     default:
       return state;
   }

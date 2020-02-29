@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:16:28
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 21:30:31
+ * @LastEditTime: 2020-02-29 21:44:16
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/StyleComp.js
  */
@@ -118,4 +118,16 @@ export const LoadMore = styled.div`
   border-radius: 20px;
   border: 1px solid #dcdcdc;
   cursor: pointer;
+`;
+
+export const BackTop = styled.div`
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #dcdcdc;
+  right: 100px;
+  bottom: 30px;
+  font-size: 14px;
 `;
