@@ -19,3 +19,8 @@ creat-react-app 底层是一个 node 服务器，
 
 iconfont 图标收藏添加项目
 eot svg ttf woff js
+
+### 性能优化
+
+PureComponent
+a 标签 ->Link
