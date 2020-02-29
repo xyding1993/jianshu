@@ -1,8 +1,2 @@
-/*
- * @Author: Yang
- * @Date: 2020-02-29 17:16:17
- * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 17:16:18
- * @Descripttion:
- * @FilePath: /jianshu/src/pages/home/store/constans.js
- */
+export const GET_HOME_DATA_LIST = "HOME/GET_HOME_DATA_LIST";
+export const LOAD_MORE_DATA_LIST = "HOME/LOAD_MORE_DATA_LIST";

@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:16:28
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 19:23:01
+ * @LastEditTime: 2020-02-29 21:30:31
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/StyleComp.js
  */
@@ -106,4 +106,16 @@ export const WriterWrapper = styled.div`
   width: 278px;
   height: 400px;
   border: 1px solid #dcdcdc;
+`;
+
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  margin: 30px 0;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
 `;

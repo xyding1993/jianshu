@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:00:00
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 19:25:46
+ * @LastEditTime: 2020-02-29 20:46:40
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/index.js
  */
@@ -13,6 +13,9 @@ import Topic from "./components/Topic";
 import Writer from "./components/Writer";
 import QrDownload from "./components/QrDownload";
 import { HomeWrapper, HomeLeft, HomeRight } from "./StyleComp";
+import { connect } from "react-redux";
+import { actionCreators } from "./store";
+
 class Home extends Component {
   render() {
     return (
@@ -34,6 +37,16 @@ class Home extends Component {
       </HomeWrapper>
     );
   }
+  componentDidMount() {
+    this.props.getHomeDataList();
+  }
 }
 
-export default Home;
+const mapDispatchToProps = dispatch => {
+  return {
+    getHomeDataList() {
+      dispatch(actionCreators.getHomeDataList());
+    }
+  };
+};
+export default connect(null, mapDispatchToProps)(Home);
