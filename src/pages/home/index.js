@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:00:00
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 16:35:47
+ * @LastEditTime: 2020-02-29 19:25:46
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/index.js
  */
@@ -11,6 +11,7 @@ import List from "./components/List";
 import Recommand from "./components/Recommand";
 import Topic from "./components/Topic";
 import Writer from "./components/Writer";
+import QrDownload from "./components/QrDownload";
 import { HomeWrapper, HomeLeft, HomeRight } from "./StyleComp";
 class Home extends Component {
   render() {
@@ -27,6 +28,7 @@ class Home extends Component {
         </HomeLeft>
         <HomeRight>
           <Recommand />
+          <QrDownload />
           <Writer />
         </HomeRight>
       </HomeWrapper>

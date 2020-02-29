@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:16:28
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 19:20:20
+ * @LastEditTime: 2020-02-29 19:23:01
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/StyleComp.js
  */
@@ -100,4 +100,10 @@ export const RecommandItem = styled.div`
   background: url(${props => props.imgUrl});
   background-size: contain;
   margin-top: 6px;
+`;
+
+export const WriterWrapper = styled.div`
+  width: 278px;
+  height: 400px;
+  border: 1px solid #dcdcdc;
 `;
