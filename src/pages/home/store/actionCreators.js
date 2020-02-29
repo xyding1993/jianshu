@@ -2,6 +2,11 @@ import * as contants from "./constans";
 import axios from "axios";
 import { fromJS } from "immutable";
 
+export const changeScrollTopShow = data => ({
+  type: contants.CHANGE_SCROLL,
+  showScroll: data
+});
+
 const changeHomeDataAction = data => ({
   type: contants.GET_HOME_DATA_LIST,
   topicList: fromJS(data.topicList),

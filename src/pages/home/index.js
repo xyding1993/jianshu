@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:00:00
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 21:51:55
+ * @LastEditTime: 2020-02-29 22:51:08
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/index.js
  */
@@ -22,6 +22,7 @@ class Home extends Component {
   }
 
   render() {
+    const { showScroll } = this.props;
     return (
       <HomeWrapper>
         <HomeLeft>
@@ -38,20 +39,41 @@ class Home extends Component {
           <QrDownload />
           <Writer />
         </HomeRight>
-        <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop>
+        {showScroll ? (
+          <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop>
+        ) : null}
       </HomeWrapper>
     );
   }
   componentDidMount() {
     this.props.getHomeDataList();
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    window.addEventListener("scroll", this.props.changeScrollTopShow);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.props.changeScrollTopShow);
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getHomeDataList() {
-      dispatch(actionCreators.getHomeDataList());
+const mapStateToProps = state => ({
+  showScroll: state.getIn(["home", "showScroll"])
+});
+
+const mapDispatchToProps = dispatch => ({
+  getHomeDataList() {
+    dispatch(actionCreators.getHomeDataList());
+  },
+  changeScrollTopShow(data) {
+    if (document.documentElement.scrollTop > 100) {
+      dispatch(actionCreators.changeScrollTopShow(true));
+    } else {
+      dispatch(actionCreators.changeScrollTopShow(false));
     }
-  };
-};
-export default connect(null, mapDispatchToProps)(Home);
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
