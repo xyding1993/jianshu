@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { RecommandWrapper, RecommandItem } from "../StyleComp";
 
-class Recommand extends Component {
+class Recommand extends PureComponent {
   render() {
     return (
       <RecommandWrapper>

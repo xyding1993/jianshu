@@ -14,8 +14,8 @@ function App() {
       <Globalstyle />
       <Globalstyle2 />
       <Provider store={store}>
-        <Header />
         <Router>
+          <Header />
           <Switch>
             <Route path="/detail" exact>
               <Detail />

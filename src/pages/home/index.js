@@ -2,11 +2,11 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:00:00
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 22:51:08
+ * @LastEditTime: 2020-02-29 22:53:12
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/index.js
  */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import List from "./components/List";
 import Recommand from "./components/Recommand";
 import Topic from "./components/Topic";
@@ -16,7 +16,7 @@ import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./StyleComp";
 import { connect } from "react-redux";
 import { actionCreators } from "./store";
 
-class Home extends Component {
+class Home extends PureComponent {
   handleScrollTop() {
     window.scrollTo(0, 0);
   }
