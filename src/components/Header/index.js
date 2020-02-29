@@ -49,8 +49,16 @@ class Header extends React.Component {
           <SearchInfoTitle>
             热门搜索
             <SearchInfoSwitch
-              onClick={() => handlerPageChange(page, totalPage)}
+              onClick={() => handlerPageChange(page, totalPage, this.spinIcon)}
             >
+              <i
+                ref={icon => {
+                  this.spinIcon = icon;
+                }}
+                className="iconfont spin"
+              >
+                &#xe606;
+              </i>
               换一批
             </SearchInfoSwitch>
           </SearchInfoTitle>
@@ -79,7 +87,7 @@ class Header extends React.Component {
                 onBlur={handlerInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <i className={focused ? "focused iconfont" : "iconfont"}>
+            <i className={focused ? "focused iconfont zoom" : "iconfont zoom"}>
               &#xe64d;
             </i>
             {this.getListArea()}
@@ -121,7 +129,14 @@ const mapDispatchToProps = dispatch => {
     handlerMouseLeave() {
       dispatch(actionCreators.mouseLeave());
     },
-    handlerPageChange(page, totalPage) {
+    handlerPageChange(page, totalPage, spinIcon) {
+      let orginAngle = spinIcon.style.transform.replace(/[^0-9]/gi, "");
+      if (orginAngle) {
+        orginAngle = parseInt(orginAngle, 10);
+      } else {
+        orginAngle = 0;
+      }
+      spinIcon.style.transform = "rotate(" + (orginAngle + 360) + "deg)";
       if (page < totalPage) {
         dispatch(actionCreators.pageChange(page + 1));
       } else {

@@ -61,21 +61,21 @@ export const NavSearch = styled.input.attrs({
   margin-top: 9px;
   margin-left: 20px;
   box-sizing: border-box;
-  color:#777;
+  color: #777;
   &::placeholder {
     color: #999;
   }
   &.focused {
-    width:240px
+    width: 240px;
   }
   &.slide-enter {
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &.slide-enter-active {
     width: 240px;
   }
   &.slide-exit {
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &.slide-exit-active {
     width: 160px;
@@ -109,7 +109,7 @@ export const Button = styled.button`
 export const SearchWrapper = styled.div`
   position: relative;
   float: left;
-  .iconfont {
+  .zoom {
     position: absolute;
     right: 5px;
     bottom: 5px;
@@ -118,8 +118,8 @@ export const SearchWrapper = styled.div`
     border-radius: 15px;
     text-align: center;
     &.focused {
-      background:#777;
-      color:#fff;
+      background: #777;
+      color: #fff;
     }
   }
 `;
@@ -141,10 +141,18 @@ export const SearchInfoTitle = styled("div")({
   color: "#333"
 });
 
-export const SearchInfoSwitch = styled("div")({
-  float: "right",
-  fontSize: "13px"
-});
+export const SearchInfoSwitch = styled.div`
+  float: right;
+  font-size: 13px;
+  .spin {
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-right: 2px;
+    transition: all 0.2s ease-in;
+    transform-origin: center;
+  }
+`;
 
 export const SearchInfoList = styled.div`
   overflow: hidden;
