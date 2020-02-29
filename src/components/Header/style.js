@@ -141,9 +141,10 @@ export const SearchInfoTitle = styled("div")({
   color: "#333"
 });
 
-export const SearchInfoSwitch = styled.div`
+export const SearchInfoSwitch = styled.span`
   float: right;
   font-size: 13px;
+  cursor: pointer;
   .spin {
     display: block;
     float: left;
