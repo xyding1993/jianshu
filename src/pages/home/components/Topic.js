@@ -3,15 +3,14 @@ import { TopicWrapper, TopicItem } from "../StyleComp";
 import { connect } from "react-redux";
 class Topic extends Component {
   render() {
-    debugger;
     const { topicList } = this.props;
 
     return (
       <TopicWrapper>
         {topicList.map(item => {
           return (
-            <TopicItem>
-              <img className="topic-pic" src={item.get("imgUrl")} alt="" />
+            <TopicItem key={item.get("title")}>
+              <img className="topic-pic" src={item.get("imgUrl")} alt="120" />
               {item.get("title")}
             </TopicItem>
           );
@@ -22,7 +21,7 @@ class Topic extends Component {
 }
 
 const mapsStateToProps = state => ({
-  topicList: state.get("home").get("topicList")
+  topicList: state.getIn(["home", "topicList"])
 });
 
 export default connect(mapsStateToProps)(Topic);

@@ -130,7 +130,8 @@ export const SearchInfo = styled("div")({
   top: "56px",
   width: "240px",
   padding: "0 20px",
-  boxShadow: "0 0 8px rgba(0, 0, 0, .2)"
+  boxShadow: "0 0 8px rgba(0, 0, 0, .2)",
+  background: "#fff"
 });
 
 export const SearchInfoTitle = styled("div")({

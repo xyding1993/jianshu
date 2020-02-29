@@ -15,12 +15,12 @@ const defaultState = fromJS({
     },
 
     {
-      title: "旅行·在路上",
+      title: "旅行在路上",
       imgUrl:
         "https://upload.jianshu.io/collections/images/13/%E5%95%8A.png?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
     },
     {
-      title: "IT·互联网",
+      title: "IT互联网",
       imgUrl:
         "https://upload.jianshu.io/collections/images/14/6249340_194140034135_2.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/64/h/64"
     },
@@ -43,6 +43,41 @@ const defaultState = fromJS({
       title: "旅行·在路上",
       imgUrl:
         "https://upload.jianshu.io/collections/images/13/%E5%95%8A.png?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+    }
+  ],
+  articleList: [
+    {
+      id: 1,
+      img:
+        "//upload-images.jianshu.io/upload_images/16616711-391d5cf72920a732.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      title: "《出山》被淘汰了，双笙这一首歌火遍抖音，00后都倒唱如流",
+      desc:
+        "对于很多爱听歌的人来说，听音乐或许是一种情怀，不论是什么样子风格的歌曲，听来都是完全不同的感觉，这也是为什么会有这么多人，不论是什么样子的音乐风..."
+    },
+    {
+      id: 2,
+      img:
+        "//upload-images.jianshu.io/upload_images/12520064-d76a92d1838c5785.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      title: "孙俪经纪人敬业到让你怀疑人生，刚生产完，就催孙俪看剧本！",
+      desc:
+        "还记得最近这几年过年我们都会做的一件事情吗？如果不记得，我提醒你一下，那就是马云爸爸发起来的集五福的活动啊！其中有一个福字特别难收集，那就是“敬..."
+    },
+    {
+      id: 3,
+      img:
+        "//upload-images.jianshu.io/upload_images/9146831-354c46c4372596ed?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      title: "胡歌出演电影《李娜》男主，成史上最帅姜山！女主并非汤唯赵薇",
+      desc:
+        "自从胡歌出道以来，出演了许多影视剧，塑造了很多经典的角色，比如说《仙剑奇侠传》中的李逍遥，《天外飞仙》中的地瓜哥哥董永，《琅琊榜》中的麒麟才子梅..."
+    },
+    {
+      id: 4,
+      img:
+        "https://upload-images.jianshu.io/upload_images/5312008-b12928f8f5fa8f11.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240",
+      title:
+        "王泽熙：如何运用九宫格，提升你的思考能力，100％有效。┃知识管理工具",
+      desc:
+        "你会有这样的困惑，几千几百种方法，放在收藏夹。有用吗？有用…… 到底怎么用呢？ 这是本人特别困惑的一点。 今天，我介绍一种有趣的方法。 叫做 九..."
     }
   ]
 });

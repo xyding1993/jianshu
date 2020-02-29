@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:16:28
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 17:46:16
+ * @LastEditTime: 2020-02-29 19:20:20
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/StyleComp.js
  */
@@ -16,24 +16,27 @@ export const HomeWrapper = styled.div`
 
 export const HomeLeft = styled.div`
   margin-left: 15px;
-  padding-top: 30px;
+  padding-top: 28px;
   float: left;
   width: 625px;
   .banner-img {
     width: 625px;
     height: 270px;
+    border-radius: 6px;
   }
 `;
 
 export const HomeRight = styled.div`
   float: right;
-  width: 240px;
+  width: 280px;
+  padding: 28px 0 0;
 `;
 
 export const TopicWrapper = styled.div`
   overflow: hidden;
   padding: 20px 0 10px 0;
   margin-left: -18px;
+  border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div`
@@ -55,4 +58,46 @@ export const TopicItem = styled.div`
     height: 32px;
     margin-right: 10px;
   }
+`;
+
+export const ListItem = styled.div`
+  padding: 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+  .article-pic {
+    display: block;
+    float: right;
+    width: 125px;
+    height: 100px;
+    border-radius: 10px;
+  }
+`;
+export const ListInfo = styled.div`
+  width: 500px;
+  float: left;
+  .title {
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .desc {
+    line-height: 24px;
+    font-size: 13px;
+    color: #999;
+  }
+`;
+
+export const RecommandWrapper = styled.div`
+  width: 280px;
+  padding: 0 0 10px 0;
+  margin-top: -10px;
+`;
+
+export const RecommandItem = styled.div`
+  width: 280px;
+  min-height: 50px;
+  background: url(${props => props.imgUrl});
+  background-size: contain;
+  margin-top: 6px;
 `;
