@@ -2,7 +2,7 @@
  * @Author: Yang
  * @Date: 2020-02-28 21:46:48
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-28 22:04:39
+ * @LastEditTime: 2020-02-29 11:42:45
  * @Descripttion:
  * @FilePath: /jianshu/src/components/Header/store/actionCreators.js
  */
@@ -16,3 +16,10 @@ export const searchFocus = () => ({
 export const searchBlur = () => ({
   type: contants.SEARCH_BLUR
 });
+
+export const getList = () => {
+  return (dispatch) => {
+    console.log(123)
+  }
+
+}

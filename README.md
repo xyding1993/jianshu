@@ -1,8 +1,12 @@
 ## React 简书项目
 
-## styled-components的使用
 
-### react-transiton-group
+### 样式资源
+styled-components
+react-transiton-group
 
+### 状态管理
+redux + react-redux + redux-thunk
 
-## less 文件配置
+### 网络请求
+axios
