@@ -19,28 +19,51 @@ import {
 } from "./style";
 
 class Header extends React.Component {
-  render() {
-    // command+d
-    const { focused, list, handlerInputFocus, handlerInputBlur } = this.props;
-
-    const getListArea = show => {
-      if (show) {
-        return (
-          <SearchInfo>
-            <SearchInfoTitle>
-              热门搜索
-              <SearchInfoSwitch>换一批</SearchInfoSwitch>
-            </SearchInfoTitle>
-            <SearchInfoList>
-              {list.map(item => {
-                return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
-              })}
-            </SearchInfoList>
-          </SearchInfo>
+  getListArea = show => {
+    const {
+      list,
+      mouseIn,
+      page,
+      handlerMouseEnter,
+      handlerMouseLeave,
+      focused,
+      handlerPageChange,
+      totalPage
+    } = this.props;
+    const newList = list.toJS();
+    const pageList = [];
+    if (newList.length) {
+      for (let i = (page - 1) * 10; i < page * 10; i += 1) {
+        pageList.push(
+          <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
         );
       }
-      return null;
-    };
+    }
+
+    if (mouseIn || focused) {
+      return (
+        <SearchInfo
+          onMouseEnter={handlerMouseEnter}
+          onMouseLeave={handlerMouseLeave}
+        >
+          <SearchInfoTitle>
+            热门搜索
+            <SearchInfoSwitch
+              onClick={() => handlerPageChange(page, totalPage)}
+            >
+              换一批
+            </SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>{pageList}</SearchInfoList>
+        </SearchInfo>
+      );
+    }
+    return null;
+  };
+
+  render() {
+    // command+d
+    const { focused, handlerInputFocus, handlerInputBlur } = this.props;
 
     return (
       <HeaderWrapper>
@@ -59,7 +82,7 @@ class Header extends React.Component {
             <i className={focused ? "focused iconfont" : "iconfont"}>
               &#xe64d;
             </i>
-            {getListArea(focused)}
+            {this.getListArea()}
           </SearchWrapper>
           <NavItem className="right">登录</NavItem>
           <NavItem className="right">Aa</NavItem>
@@ -76,7 +99,10 @@ class Header extends React.Component {
 const mapStateToProps = state => {
   return {
     focused: state.getIn(["header", "focused"]),
-    list: state.getIn(["header", "list"])
+    mouseIn: state.getIn(["header", "mouseIn"]),
+    list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"])
   };
 };
 
@@ -88,6 +114,19 @@ const mapDispatchToProps = dispatch => {
     },
     handlerInputBlur() {
       dispatch(actionCreators.searchBlur());
+    },
+    handlerMouseEnter() {
+      dispatch(actionCreators.mouseEnter());
+    },
+    handlerMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
+    },
+    handlerPageChange(page, totalPage) {
+      if (page < totalPage) {
+        dispatch(actionCreators.pageChange(page + 1));
+      } else {
+        dispatch(actionCreators.pageChange(1));
+      }
     }
   };
 };
