@@ -2,15 +2,35 @@
  * @Author: Yang
  * @Date: 2020-02-29 16:00:00
  * @LastEditors: Yang
- * @LastEditTime: 2020-02-29 16:02:45
+ * @LastEditTime: 2020-02-29 16:35:47
  * @Descripttion:
  * @FilePath: /jianshu/src/pages/home/index.js
  */
 import React, { Component } from "react";
-
+import List from "./components/List";
+import Recommand from "./components/Recommand";
+import Topic from "./components/Topic";
+import Writer from "./components/Writer";
+import { HomeWrapper, HomeLeft, HomeRight } from "./StyleComp";
 class Home extends Component {
   render() {
-    return <div>Home</div>;
+    return (
+      <HomeWrapper>
+        <HomeLeft>
+          <img
+            className="banner-img"
+            src="https://upload.jianshu.io/admin_banners/web_images/4894/23ecc55accf5c6a6c9910be966c125853d1f04a5.png?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+            alt="540"
+          />
+          <Topic />
+          <List />
+        </HomeLeft>
+        <HomeRight>
+          <Recommand />
+          <Writer />
+        </HomeRight>
+      </HomeWrapper>
+    );
   }
 }
 
