@@ -2,7 +2,7 @@
 
 ### 样式资源
 
-styled-components
+styled-components innerRef
 react-transiton-group
 
 ### 状态管理
@@ -24,3 +24,6 @@ eot svg ttf woff js
 
 PureComponent
 a 标签 ->Link
+react-loadable
+
+### 登录重定向
